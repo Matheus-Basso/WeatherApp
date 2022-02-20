@@ -94,8 +94,8 @@ function App() {
   }
 
   function Clock({ timezone, utc }) {
-    // var now = new Date();
-    // var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+    var now = new Date();
+    var utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
     const [clockState, setClockState] = useState();
 
     const hourDiff = timezone / 3600;
