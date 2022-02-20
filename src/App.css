@@ -1,38 +1,252 @@
-.App {
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100%vh;
+  min-height: 919px;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.75)
+  );
+  padding: 25px;
+}
+
+.search-box {
+  width: 100%;
+  margin: 0 0 75px;
+}
+
+.search-box .search-bar {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  background-color: rgba(248, 248, 242, 0.5);
+  border-radius: 0px 0px 16px 16px;
+  margin-top: -25px;
+  box-shadow: 0px 3px rgba(0, 0, 0, 0.2);
+  color: #313131;
+  font-size: 20px;
+  transition: 0.4s ease;
+}
+
+.search-box .search-bar:focus {
+  background-color: rgba(248, 248, 242, 0.75);
+}
+
+.location-box .location {
+  color: #f8f8f2;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.location-box .date {
+  color: #f8f8f2;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
+}
+
+.location-box .clock {
+  color: #f8f8f2;
+  font-size: 20px;
+  font-weight: 500;
+  /* font-style: italic; */
+  text-align: center;
+  text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+  color: #f8f8f2;
+  font-size: 102px;
+  font-weight: 900;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-box .weather {
+  color: #f8f8f2;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.day-clear {
+  background-image: url("./assets/day_clearsky.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.day-cloudy {
+  background-image: url("./assets/day_cloudy.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.day-fog {
+  background-image: url("./assets/day_fog.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.day-partly-cloudy {
+  background-image: url("./assets/day_partlycloudy.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.day-rain {
+  background-image: url("./assets/day_rain.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.day-snow {
+  background-image: url("./assets/day_snow.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.night-clear {
+  background-image: url("./assets/night_clearsky.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.night-cloudy {
+  background-image: url("./assets/night_cloudy.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.night-fog {
+  background-image: url("./assets/night_cloudy.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.night-partly-cloudy {
+  background-image: url("./assets/night_partlycloudy.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.night-rain {
+  background-image: url("./assets/night_rain.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.night-snow {
+  background-image: url("./assets/night_snow.png");
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+.blank {
+  background: #282a36;
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 919px;
+  background-size: cover;
+  background-position: bottom;
+  transition: all 0.4s ease;
+}
+
+#back-color {
+  background: #282a36;
+  width: 100%;
+  height: 100vh;
+}
+
+#container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
