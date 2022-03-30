@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import "./App.css";
+
 
 function App() {
   const api = {
-    key: "f24cf78be7a65457790d9c68d64016ee",
+    key: process.env.REACT_APP_API_SECRET,
     base: "https://api.openweathermap.org/data/2.5/",
   };
 
